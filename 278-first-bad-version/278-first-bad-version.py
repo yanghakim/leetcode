@@ -14,3 +14,4 @@ class Solution:
                 left = mid + 1
                 
         return int(left)
+    
