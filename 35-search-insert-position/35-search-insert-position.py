@@ -10,6 +10,5 @@ class Solution:
                 right = mid - 1
             elif (nums[mid] < target):
                 left = mid + 1
-        print(right)
-        print(left)
+        
         return left
