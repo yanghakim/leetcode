@@ -3,9 +3,12 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        from collections import deque
         k = k % len(nums)
         i = 0
+        d = deque(nums)
         while i < k:
-            temp = nums.pop()
-            nums.insert(0, temp)
+            temp = d.pop()
+            d.appendleft(temp)
             i += 1
+        nums[:] = d
