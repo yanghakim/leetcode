@@ -7,18 +7,19 @@
 
 class Solution:
     def guessNumber(self, n: int) -> int:
-        left, right = 0, n
+        left, right = 1, n 
+        
         while left <= right:
             middle = left + (right - left) // 2
-            
-            print(left)
-            print(middle)
-            print(right)
-            
-            if (guess(middle) == -1):
+            attempt = guess(middle)
+
+            # target < guess
+            if (attempt == -1):
                 right = middle - 1
-            elif (guess(middle) == 1):
+            elif (attempt == 1):
                 left = middle + 1
             else:
                 return middle
         return -1
+            
+            
